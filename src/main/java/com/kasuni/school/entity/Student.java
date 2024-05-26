@@ -13,15 +13,15 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; 
 
-    @Column(name = "first_name", nullable=false)
+    @Column(name = "first_name", nullable=false, length=20)
     private String firstname;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable=false, length=20)
     private String lastname;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable=false, unique=true, length=45)
     private String email;
 
     public Student() {
@@ -64,4 +64,6 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
+
+ 
 }
