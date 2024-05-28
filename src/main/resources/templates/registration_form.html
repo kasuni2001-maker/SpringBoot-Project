@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration - Student Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .registration-container {
+            margin-top: 100px;
+            max-width: 400px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #000;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-info {
+            background-color: #5bc0de;
+            border-color: #46b8da;
+        }
+        .btn-info:hover {
+            background-color: #31b0d5;
+            border-color: #269abc;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Student Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="container">
+        <div class="registration-container">
+            <form th:action="@{/register}" th:object="${user}" method="post">
+                <h3 class="text-center">User Registration</h3>
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" th:field="*{firstName}" class="form-control" id="firstName" placeholder="Enter first name"/>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" th:field="*{lastName}" class="form-control" id="lastName" placeholder="Enter last name"/>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Enter email"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Enter password"/>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9Q91Pq5SMVRj0IM7LgR9tOMw0d6iqGgT3oQU6"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+</html>
